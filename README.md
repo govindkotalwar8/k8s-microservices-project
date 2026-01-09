@@ -14,7 +14,7 @@ The focus of this project is to implement production-like Kubernetes concepts in
 
 * `screenshots/architecture.png`
 
-
+![Architecture Diagram](screenshots/architecture.png)
 
 The application is composed of two independent microservices:
 
@@ -49,6 +49,7 @@ Each microservice is built, containerized, and deployed independently.
 ## Project Structure
 
 ```
+
 project/
 ├── product-service/
 │   ├── app.py
@@ -66,7 +67,8 @@ project/
 ├── product-hpa.yaml
 ├── README.md
 └── screenshots/
-```
+
+````
 
 ---
 
@@ -80,11 +82,13 @@ The `kubectl` CLI was configured to interact with the cluster.
 ```bash
 kubectl get nodes
 kubectl cluster-info
-```
+````
 
 **Screenshot:**
 
 * `screenshots/01-cluster-nodes.png`
+
+![Cluster Nodes](screenshots/01-cluster-nodes.png)
 
 ---
 
@@ -102,6 +106,8 @@ Images were built and pushed to Docker Hub.
 **Screenshot:**
 
 * `screenshots/02-docker-images.png`
+
+![Docker Images](screenshots/02-docker-images.png)
 
 ---
 
@@ -128,6 +134,8 @@ kubectl apply -f order-deployment.yaml
 
 * `screenshots/03-product-and-orders-pods-running.png`
 
+![Pods Running](screenshots/03-product-and-orders-pods-running.png)
+
 ---
 
 ## Service Discovery and Networking
@@ -151,6 +159,8 @@ kubectl port-forward deployment/order-service 5002:5002
 **Screenshot:**
 
 * `screenshots/05-services-list.png`
+
+![Services List](screenshots/05-services-list.png)
 
 ---
 
@@ -176,6 +186,8 @@ while true; do wget -q -O- http://product-service; done
 
 * `screenshots/07-hpa-pods-scaling.png`
 
+![HPA Scaling](screenshots/07-hpa-pods-scaling.png)
+
 ---
 
 ## Persistent Storage and Data Persistence
@@ -196,6 +208,8 @@ kubectl get pv,pvc
 
 * `screenshots/08-pv-pvc-bound.png`
 
+![PV PVC Bound](screenshots/08-pv-pvc-bound.png)
+
 ---
 
 ## Data Persistence Validation
@@ -214,7 +228,12 @@ This confirms that data persists across pod restarts.
 **Screenshots:**
 
 * `screenshots/09-order-data-before-restart.png`
+
+![Order Data Before Restart](screenshots/09-order-data-before-restart.png)
+
 * `screenshots/10-order-data-after-restart.png`
+
+![Order Data After Restart](screenshots/10-order-data-after-restart.png)
 
 ---
 
@@ -247,5 +266,3 @@ This project successfully demonstrates:
 * Horizontal Pod Autoscaling under load
 * Persistent storage using PV and PVC
 * Data durability across pod restarts
-
-The setup closely reflects real-world Kubernetes deployments and common DevOps troubleshooting scenarios.
