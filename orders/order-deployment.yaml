@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      labels:
+        app: order
+    spec:
+      containers:
+      - name: order
+        image: govindk123/order-service:v1
+        ports:
+        - containerPort: 5002
+        volumeMounts:
+        - mountPath: /data
+          name: order-storage
+      volumes:
+      - name: order-storage
+        persistentVolumeClaim:
+          claimName: order-pvc
