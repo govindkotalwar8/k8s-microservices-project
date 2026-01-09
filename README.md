@@ -12,7 +12,7 @@ The focus of this project is to implement production-like Kubernetes concepts in
 
 **Architecture:**
 
-* `screenshots/architecture.png`
+* `architecture`
 
 ![Architecture Diagram](screenshots/architecture.png)
 
@@ -86,7 +86,7 @@ kubectl cluster-info
 
 **Screenshot:**
 
-* `screenshots/01-cluster-nodes.png`
+* `cluster-nodes`
 
 ![Cluster Nodes](screenshots/01-cluster-nodes.png)
 
@@ -105,7 +105,7 @@ Images were built and pushed to Docker Hub.
 
 **Screenshot:**
 
-* `screenshots/02-docker-images.png`
+* `docker-images`
 
 ![Docker Images](screenshots/02-docker-images.png)
 
@@ -132,7 +132,7 @@ kubectl apply -f order-deployment.yaml
 
 **Screenshots:**
 
-* `screenshots/03-product-and-orders-pods-running.png`
+* `product-and-orders-pods-running`
 
 ![Pods Running](screenshots/03-product-and-orders-pods-running.png)
 
@@ -158,7 +158,7 @@ kubectl port-forward deployment/order-service 5002:5002
 
 **Screenshot:**
 
-* `screenshots/05-services-list.png`
+* `services-list`
 
 ![Services List](screenshots/05-services-list.png)
 
@@ -184,7 +184,7 @@ while true; do wget -q -O- http://product-service; done
 
 **Screenshots:**
 
-* `screenshots/07-hpa-pods-scaling.png`
+* `hpa-pods-scaling`
 
 ![HPA Scaling](screenshots/07-hpa-pods-scaling.png)
 
@@ -206,7 +206,7 @@ kubectl get pv,pvc
 
 **Screenshot:**
 
-* `screenshots/08-pv-pvc-bound.png`
+* `pv-pvc-bound`
 
 ![PV PVC Bound](screenshots/08-pv-pvc-bound.png)
 
@@ -227,11 +227,11 @@ This confirms that data persists across pod restarts.
 
 **Screenshots:**
 
-* `screenshots/09-order-data-before-restart.png`
+* `order-data-before-restart`
 
 ![Order Data Before Restart](screenshots/09-order-data-before-restart.png)
 
-* `screenshots/10-order-data-after-restart.png`
+* `order-data-after-restart`
 
 ![Order Data After Restart](screenshots/10-order-data-after-restart.png)
 
